@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vec_2dint_2eh_0',['vec-int.h',['../vec-int_8h.html',1,'']]]
+  ['r_5fnew_5fint_0',['r_new_int',['../vec-int_8h.html#a7ad418074750458273bfee1209316c8e',1,'vec-int.h']]]
 ];
