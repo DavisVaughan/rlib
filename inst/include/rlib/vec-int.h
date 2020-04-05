@@ -21,5 +21,15 @@ static inline SEXP r_new_int(R_xlen_t length) {
   return Rf_allocVector(INTSXP, length);
 }
 
+/**
+ * Dereference an integer vector
+ *
+ * @param x The vector to dereference
+ *
+ * @return An integer pointer to the dereferenced vector.
+ */
+static inline int* r_int_deref(SEXP x) {
+  return INTEGER(x);
+}
 
 #endif
