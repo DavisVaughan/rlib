@@ -3,7 +3,6 @@
 
 
 #include "r.h"
-#include "sexp.h"
 
 
 enum r_type {
@@ -38,15 +37,26 @@ enum r_type {
   r_type_function    = 99
 };
 
-/**
- * Extract the type of a sexp
- *
- * @param x A sexp to extract the type of.
- *
- * @return The type of `x`.
- */
-static inline enum r_type r_typeof(sexp x) {
-  return TYPEOF(x);
+static inline enum r_type r_type(sexp x) {
+  return (enum r_type) TYPEOF(x);
+}
+
+static inline const char* r_type_as_c_string(enum r_type type) {
+  return Rf_type2char(type);
+}
+static inline enum r_type r_type_from_c_string(const char* type) {
+  return Rf_str2type(type);
+}
+
+static inline void r_poke_type(sexp x, enum r_type type) {
+  SET_TYPEOF(x, type);
+}
+static inline void r_poke_type_from_c_string(sexp x, const char* type) {
+  SET_TYPEOF(x, r_type_from_c_string(type));
+}
+
+static inline bool r_is_null(sexp x) {
+  return x == r_null;
 }
 
 
