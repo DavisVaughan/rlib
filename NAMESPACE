@@ -3,6 +3,8 @@
 S3method(roxy_tag_parse,roxy_tag_args)
 S3method(roxy_tag_parse,roxy_tag_fn)
 export(r_length)
+export(r_mark_precious)
 export(r_short_length)
+export(r_unmark_precious)
 importFrom(roxygen2,roxy_tag_parse)
 useDynLib(rlib, .registration = TRUE)
