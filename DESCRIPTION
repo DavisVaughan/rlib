@@ -20,4 +20,5 @@ Imports:
     vctrs,
     rprojroot,
     glue,
-    devtools
+    devtools,
+    roxygen2
