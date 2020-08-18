@@ -4,11 +4,6 @@
 \alias{r_mark_precious}
 \alias{r_unmark_precious}
 \title{Protect objects from garbage collection}
-\usage{
-r_mark_precious(x)
-
-r_unmark_precious(x)
-}
 \arguments{
 \item{x}{A sexp.}
 }

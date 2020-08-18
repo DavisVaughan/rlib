@@ -46,37 +46,7 @@ read_comments <- function(file) {
     block <- lines[seq]
     block <- gsub("//'", "#'", block)
 
-    fake_block <- c(block, "NULL")
-    fake_block <- glue::glue_collapse(fake_block, sep = "\n")
-    fake_block <- as.character(fake_block)
-
-    # Parse and find `fn`
-    roxy <- roxygen2::parse_text(fake_block)[[1L]]
-    tags <- roxy$tags
-
-    tags_tag <- vapply(tags, function(x) x$tag, character(1))
-    fn_tags <- tags[tags_tag == "fn"]
-    args_tags <- tags[tags_tag == "args"]
-
-    if (length(fn_tags) == 1L) {
-      fn_tag <- fn_tags[[1]]
-      fn_val <- fn_tag$val
-    } else {
-      rlang::abort("Each rlib doc must have exactly 1 `@fn` tag.")
-    }
-
-    if (length(args_tags) == 1L) {
-      args_val <- args_tags[[1]]$val
-    } else if (length(args_tags) == 0L) {
-      args_val <- ""
-    } else {
-      rlang::abort("Each rlib doc must have exactly 1 or 0 `@args` tags.")
-    }
-
-    export <- "#' @export"
-    fn <- glue::glue("[fn_val] <- function([args_val]) {}", .open = "[", .close = "]")
-    block <- c(block, export, fn)
-
+    block <- c(block, "NULL")
     block <- glue::glue_collapse(block, sep = "\n")
     block <- as.character(block)
 

@@ -21,15 +21,13 @@
 //' For `r_short_length()`, a `r_short_ssize_t` containing the
 //' short length of `x`.
 //'
-//' @fn r_length
-//' @args x
+//' @name
+//'   r_length
+//' @aliases
+//'   r_short_length
 static inline r_ssize_t r_length(sexp x) {
   return Rf_xlength(x);
 }
-
-//' @rdname r_length
-//' @fn r_short_length
-//' @args x
 static inline r_short_ssize_t r_short_length(sexp x) {
   return Rf_length(x);
 }

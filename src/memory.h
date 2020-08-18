@@ -16,15 +16,13 @@
 //'
 //' @param x A sexp.
 //'
-//' @fn r_mark_precious
-//' @args x
+//' @name
+//'   r_mark_precious
+//' @aliases
+//'   r_unmark_precious
 static inline void r_mark_precious(sexp x) {
   R_PreserveObject(x);
 }
-
-//' @rdname r_mark_precious
-//' @fn r_unmark_precious
-//' @args x
 static inline void r_unmark_precious(sexp x) {
   R_ReleaseObject(x);
 }

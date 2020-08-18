@@ -8,13 +8,8 @@
 #'
 #' @param x A sexp.
 #'
-#' @fn r_mark_precious
-#' @args x
-#' @export
-r_mark_precious <- function(x) {}
-
-#' @rdname r_mark_precious
-#' @fn r_unmark_precious
-#' @args x
-#' @export
-r_unmark_precious <- function(x) {}
+#' @name
+#'   r_mark_precious
+#' @aliases
+#'   r_unmark_precious
+NULL

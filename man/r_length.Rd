@@ -4,11 +4,6 @@
 \alias{r_length}
 \alias{r_short_length}
 \title{Length}
-\usage{
-r_length(x)
-
-r_short_length(x)
-}
 \arguments{
 \item{x}{A sexp to compute the length of.}
 }

@@ -15,13 +15,8 @@
 #' For `r_short_length()`, a `r_short_ssize_t` containing the
 #' short length of `x`.
 #'
-#' @fn r_length
-#' @args x
-#' @export
-r_length <- function(x) {}
-
-#' @rdname r_length
-#' @fn r_short_length
-#' @args x
-#' @export
-r_short_length <- function(x) {}
+#' @name
+#'   r_length
+#' @aliases
+#'   r_short_length
+NULL
